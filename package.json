@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tailwind": "npx tailwindcss -i ./src/index.css -o ./dist/output.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/index.scss -o ./dist/output.css --watch"
   },
   "dependencies": {
     "react": "^18.2.0",

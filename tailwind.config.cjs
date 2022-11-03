@@ -11,6 +11,9 @@ module.exports = {
       boxShadow: {
         'card': '0 2px 15px #382AE150',
       },
+      backgroundImage: {
+        'header': "url('../src/assets/pattern-bg.png')",
+      },
     },
   },
   plugins: [],
