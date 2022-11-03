@@ -41,25 +41,3 @@ body {
   position: relative;
 }
 
-body::after {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: -100px;
-  width: 25%;
-  height: 100vh;
-  border-radius: 0 0 999px 999px;
-  background: linear-gradient(180deg, rgba(227,66,255,1) 0%, rgba(140,58,253,1) 100%);
-}
-
-@media (max-width: 756px) {
-  body::after {
-    height: 550px;
-    width: 350px;
-    left: -150px;
-  }
-}
-
-
-

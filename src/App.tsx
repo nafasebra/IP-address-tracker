@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <div className="relative overflow-hidden py-4">
+      <div className="relative overflow-hidden">
         
       </div>
       <Footer />
