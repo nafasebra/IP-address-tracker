@@ -1,37 +1,26 @@
-import React from "react";
+import React from 'react'
+import { MapContainer, TileLayer } from 'react-leaflet'
+import MarkerLocation from './MarkerLocation'
 
-import { MapContainer, TileLayer, useMap, Marker } from "react-leaflet";
-import L, { LatLngBounds } from "leaflet";
-
-
-import markerIcon from "../assets/icon-location.svg"
+import "leaflet/dist/leaflet.css"
 
 
-function MapSection() {
 
-  const iconMarker = new L.Icon({
-      iconUrl: markerIcon,
-      iconRetinaUrl: markerIcon,
-      iconAnchor: null,
-      popupAnchor: null,
-      shadowUrl: null,
-      shadowSize: null,
-      shadowAnchor: null,
-      iconSize: new L.Point(60, 75),
-      className: 'leaflet-div-icon'
-   });
-
+function Marker({address}: any) {
   return (
-    <div className="w-full h-[250px] overflow-hidden">
-      <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+    <MapContainer
+        center={[address.location.lat, address.location.lng]}
+        zoom={13}
+        scrollWheelZoom={true}
+        style={{ height: "100vh", width: "100vw" }}
+      >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker icon={iconMarker} position={[51.505, -0.09]} />
+        <MarkerLocation address={address} />
       </MapContainer>
-    </div>
-  );
+  )
 }
 
-export default MapSection;
+export default Marker

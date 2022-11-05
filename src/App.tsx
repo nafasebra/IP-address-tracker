@@ -1,18 +1,13 @@
-import { useState } from "react";
-
 import Footer from "./components/Footer";
-import Header from "./components/Header";
-import MapSection from "./components/MapSection";
-
-
+import Main from "./components/Main";
+import { AddressProvider } from "./context/AddressContext";
 
 function App() {
   return (
     <>
-      <div className="relative overflow-hidden">
-        <Header />
-        <MapSection />
-      </div>
+      <AddressProvider>
+        <Main />
+      </AddressProvider>
       <Footer />
     </>
   );
