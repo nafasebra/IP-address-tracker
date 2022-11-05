@@ -1,13 +1,13 @@
 import React from "react";
 
 import { MapContainer, TileLayer, useMap, Marker } from "react-leaflet";
-import L from 'leaflet';
+import L, { LatLngBounds } from "leaflet";
+
 
 import markerIcon from "../assets/icon-location.svg"
 
 
 function MapSection() {
-  const position = [51.505, -0.09];
 
   const iconMarker = new L.Icon({
       iconUrl: markerIcon,
