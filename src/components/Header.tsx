@@ -4,29 +4,14 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
 import { AddressContext } from "../context/AddressContext";
 import InfoBoxSection from "./InfoBoxSection";
 
-import L, { LatLngExpression, IconOptions } from "leaflet";
-import mapIcon from "../assets/icon-location.svg";
+import { LatLngExpression } from "leaflet";
 import "leaflet/dist/leaflet.css";
-
-type MapIconType = {
-  iconSize: number[],
-  iconAnchor: number[],
-  popupAnchor: number[],
-  iconUrl: string,
-}
+import CustomMarker from "./CustomMarker";
 
 function Header() {
-  // map
-  const position: LatLngExpression = [51.505, -0.09];
-  const icon: L.Icon = L.icon({
-    iconSize: [32, 40],
-    iconAnchor: [10, 41],
-    popupAnchor: [2, -40],
-    iconUrl: mapIcon
-  })
+  const useAppContext = useContext(AddressContext);
 
   const SearchInputRef = useRef<HTMLInputElement>(null);
-  const useAppContext = useContext(AddressContext);
 
   const ipRegex =
     /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/gi;
@@ -127,11 +112,7 @@ function Header() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker icon={icon} position={[useAppContext.address?.location?.lat || 12.5, useAppContext.address?.location?.lng || -12.5]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        <CustomMarker />
       </MapContainer>
     </>
   );
