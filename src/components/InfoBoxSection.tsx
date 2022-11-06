@@ -12,7 +12,7 @@ function InfoBoxSection(props: PropType) {
 
 
   return (
-    <div className="bg-light w-[90%] max-w-[850px] mx-auto shadow-card rounded-lg flex flex-col lg:flex-row py-5 px-7 z-10 absolute top-[40%] lg:top-[75%] left-0 right-0">
+    <div className="bg-light w-[90%] max-w-[850px] mx-auto shadow-card rounded-lg flex flex-col lg:flex-row py-5 px-7 z-40 absolute top-[40%] lg:top-[75%] left-0 right-0">
       <div className='w-full lg:w-[25%] border-gray-300 px-7 py-5 border-r-0 border-b-[1px] lg:border-b-0 lg:border-r-[1px] text-center lg:text-left'>
          <p className='uppercase text-gray-500 font-black text-xs'>
             ip address

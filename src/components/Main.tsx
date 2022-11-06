@@ -2,7 +2,6 @@ import React, {useContext} from 'react'
 import { AddressContext } from '../context/AddressContext';
 
 import Header from "./Header";
-import MapSection from "./MarkerLocation";
 
 
 function Main() {
@@ -11,7 +10,6 @@ function Main() {
   return (
     <>
       <Header />
-      {/* <MapSection address={useAppContext.address} /> */}
     </>
   )
 }
