@@ -9,7 +9,7 @@ module.exports = {
         'pink': '#E342FF',
       },
       boxShadow: {
-        'card': '0 2px 20px #aaaaaa50',
+        'card': '0 2px 20px #aaaaaa40',
       },
       backgroundImage: {
         'header': "url('../src/assets/pattern-bg.png')",

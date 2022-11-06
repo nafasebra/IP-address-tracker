@@ -54,7 +54,7 @@ function Header() {
   return (
     <div className="relative">
       <header className="bg-cover bg-header">
-        <div className="w-[90%] max-w-[550px] mx-auto pt-14 pb-36">
+        <div className="w-[90%] max-w-[550px] mx-auto pt-14 pb-[350px] lg:pb-36">
           <h1 className="capitalize text-light text-center font-bold text-2xl mb-7">
             IP Address tracker
           </h1>
