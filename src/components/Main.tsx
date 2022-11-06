@@ -11,7 +11,7 @@ function Main() {
   return (
     <>
       <Header />
-      <MapSection address={useAppContext.address} />
+      {/* <MapSection address={useAppContext.address} /> */}
     </>
   )
 }

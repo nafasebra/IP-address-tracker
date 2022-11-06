@@ -12,27 +12,27 @@ type PropType = {
 };
 
 function MarkerLocation({ address }: PropType) {
-  const map = useMap();
+  // const map = useMap();
 
   const position = useMemo(() => {
     return [address.location?.lat, address.location?.lng];
   }, [address.location?.lat, address.location?.lng]);
 
-  const iconMarker = new L.Icon({
-    iconSize: [32, 40],
-    iconAnchor: [10, 41],
-    popupAnchor: [2, -40],
-    iconUrl: icon,
-  });
+  // const iconMarker = new L.Icon({
+  //   iconSize: [32, 40],
+  //   iconAnchor: [10, 41],
+  //   popupAnchor: [2, -40],
+  //   iconUrl: icon,
+  // });
 
-  useEffect(() => {
-    map.flyTo(position, 13, {
-      animate: true,
-    });
-  }, [map, position]);
+  // useEffect(() => {
+  //   map.flyTo(position, 13, {
+  //     animate: true,
+  //   });
+  // }, [map, position]);
 
   return (
-    <Marker icon={iconMarker} position={position}>
+    <Marker position={[11.55, 55.55]}>
       <Popup>This is the location of the IP Address or Domain</Popup>
     </Marker>
   );

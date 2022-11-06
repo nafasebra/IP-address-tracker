@@ -4,7 +4,6 @@ import InfoBoxSection from "./InfoBoxSection";
 
 function Header() {
   const SearchInputRef = useRef<HTMLInputElement>(null);
-  const [address, setAddress] = useState<any>(null);
 
   const useAppContext = useContext(AddressContext);
 
@@ -15,7 +14,7 @@ function Header() {
 
   const getInitalData = async () => {
     const res = await fetch(
-      `https://geo.ipify.org/api/v2/country,city?apiKey=${process.env.API_KEY}&ipAddress=4.2.2.4`
+      `https://geo.ipify.org/api/v2/country?apiKey=${import.meta.env.VITE_API_KEY}&ipAddress=8.8.8.8`
     );
     const data = await res.json();
     useAppContext.setAddress(data);
@@ -24,7 +23,7 @@ function Header() {
   const getInputData = async () => {
     const res = await fetch(
       `https://geo.ipify.org/api/v2/country,city?apiKey=${
-        process.env.API_KEY
+        import.meta.env.VITE_API_KEY
       }&${
         ipRegex.test(SearchInputRef.current?.value || "")
           ? `ipAddress=${SearchInputRef.current?.value}`
@@ -50,6 +49,7 @@ function Header() {
     getInputData();
     SearchInputRef.current!.value = "";
   };
+
 
   return (
     <div className="relative">
