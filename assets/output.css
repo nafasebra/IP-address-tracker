@@ -656,7 +656,7 @@ body{
 }
 
 .bg-header{
-  background-image: url('/IP-address-tracker/src/assets/pattern-bg.png');
+  background-image: url('./pattern-bg.png');
 }
 
 .bg-cover{
